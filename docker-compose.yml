@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  ide:
+    build: 
+      context: ide
+      args:
+          - http_proxy=${http_proxy}
+          - https_proxy=${https_proxy}
+          - no_proxy=${no_proxy}
+          - USERNAME=theia
+          - GROUPNAME=theia
+          - USERID=1000
+          - GROUPID=1000
+    container_name: thiea_ide
+    environment:
+      - USERNAME=theia
+      - GROUPNAME=theia
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./volumes/ide/theia:/home/theia/workspace
+#  Now Develop
+#  web:
+#    build: 
+#      context: web
+#    ports:
+#      - "8089:80"
+#      - "4433:443"
+#    read_only: true
+#    restart: unless-stopped
+#    volumes:
+#      # This directory must have cert files if you want to enable SSL
+#      - ./volumes/web/cert:/cert:ro
+#      - /etc/localtime:/etc/localtime:ro
