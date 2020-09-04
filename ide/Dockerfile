@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV NVM_DIR /home/${USERNAME}/.nvm
 
 RUN apt-get update -y \
-	&& apt-get install -y curl git sudo python build-essential locales language-pack-ja-base language-pack-ja \
+	&& apt-get install -y curl git sudo python build-essential locales language-pack-ja-base language-pack-ja iproute2 \
 	&& apt-get clean \
 	&& rm -fr /var/lib/apt/lists/* \
     && locale-gen ja_JP.UTF-8 \

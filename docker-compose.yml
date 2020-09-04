@@ -13,6 +13,7 @@ services:
           - USERID=1000
           - GROUPID=1000
     container_name: thiea_ide
+    restart: unless-stopped
     environment:
       - USERNAME=theia
       - GROUPNAME=theia
