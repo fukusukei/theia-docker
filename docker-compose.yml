@@ -31,11 +31,11 @@ services:
           # - BASIC_AUTH_USERNAME=theia
           # - BASIC_AUTH_PASSWORD=theia_password
     ports:
-      - "8089:80"
-      - "4433:443"
+      - "80:80"
+      - "443:443"
     read_only: true
     restart: unless-stopped
     volumes:
       # This directory must have cert files if you want to enable SSL
-      - ./volumes/web/cert:/cert:ro
+      # - ./volumes/web/cert:/cert:ro
       - /etc/localtime:/etc/localtime:ro
