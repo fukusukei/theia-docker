@@ -2,6 +2,9 @@ FROM nginx:mainline-alpine
 
 ARG BASIC_AUTH_USERNAME=theia
 ARG BASIC_AUTH_PASSWORD=theia_password
+ARG http_proxy
+ARG https_proxy
+ARG no_proxy
 
 # Remove default configuration and add our custom Nginx configuration files
 RUN rm /etc/nginx/conf.d/default.conf \
